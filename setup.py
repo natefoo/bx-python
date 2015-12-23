@@ -21,13 +21,15 @@ except:
        
 def main():
     setup(  name = "bx-python",
-            version = "0.7.3",
+            version = "0.7.4",
             py_modules = [ 'psyco_full' ],
             packages = find_packages( 'lib' ),
             package_dir = { '': 'lib' },
             package_data = { '': ['*.ps'] },
             scripts = glob( "scripts/*.py" ),
             ext_modules = get_extension_modules(),
+            install_requires = ['numpy'],
+            extras_require = { 'lzo': ['python_lzo'] },
             test_suite = 'nose.collector',
             setup_requires = ['nose>=0.10.4'],
             author = "James Taylor, Bob Harris, David King, Brent Pedersen, Kanwei Li, and others",
